@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la Ciencia - Proyectos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 50px;
+            padding: 20px;
+            transition: transform 1s ease-in-out;
+        }
+
+        .project {
+            width: 30%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s; /* Animación al hacer hover */
+        }
+
+        .project h2 {
+            color: #4CAF50;
+        }
+
+        .project p {
+            font-size: 1.2em;
+        }
+
+        .project img {
+            width: 100px;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .project:hover {
+            transform: scale(1.05); /* Aumentar tamaño al hacer hover */
+        }
+
+        .section {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .active {
+            display: flex;
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .section-content {
+            max-width: 600px;
+            text-align: justify;
+        }
+
+        .section img {
+            max-width: 300px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Día de la Ciencia - Proyectos</h1>
+</header>
+
+<div class="container" id="mainSection">
+    <div class="project" onclick="showSection('quimicaSection')">
+        <h2>Proyecto de Química</h2>
+        <img src="imagenes/quimica.jpeg" alt="Imagen de química"> <!-- Ruta corregida -->
+        <p>Este proyecto explora las propiedades de las bolsas biodegradables.</p>
+    </div>
+    
+    <div class="project" onclick="showSection('fisicaSection')">
+        <h2>Proyecto de Física</h2>
+        <img src="imagenes/fisica.jpeg" alt="Imagen de física"> <!-- Ruta corregida -->
+        <p>Demostración de la reflexión de ondas sonoras utilizando láser.</p>
+    </div>
+
+    <div class="project" onclick="showSection('tecnologiaSection')">
+        <h2>Proyecto de Tecnología</h2>
+        <img src="imagenes/tecnologia.jpeg" alt="Imagen de tecnología"> <!-- Ruta corregida -->
+        <p>Juego interactivo sobre tecnología y química desarrollado en Game Maker.</p>
+    </div>
+</div>
+
+<div id="quimicaSection" class="section hidden">
+    <div class="flex-container">
+        <h2>Proyecto de Química</h2>
+        <div class="section-content">
+            <h3>¿De qué trata el proyecto?</h3>
+            <p>Este proyecto se centra en la creación de bolsas biodegradables a partir de almidón de maíz. A diferencia de las bolsas plásticas convencionales que tardan siglos en descomponerse, las bolsas biodegradables ofrecen un ciclo de vida mucho más corto y un impacto ambiental significativamente menor. Con el aumento de la conciencia sobre la contaminación plástica, este proyecto busca proporcionar una solución sostenible que pueda ser utilizada en diversas aplicaciones diarias.</p>
+            
+            <img src="imagenes/quimica_detalle.jpeg" alt="Imagen del proyecto de química"> <!-- Ruta corregida -->
+            
+            <h3>¿Cómo se desarrolló?</h3>
+            <p>Para desarrollar este proyecto, se realizó una mezcla de almidón de maíz, glicerina y agua, calentando los ingredientes para formar una masa maleable. Una vez enfriada, esta masa se transformó en una bolsa biodegradable. Durante el proceso, se llevaron a cabo pruebas para evaluar su resistencia, flexibilidad y velocidad de descomposición en diferentes entornos, como en el suelo y en el agua, para asegurar que el producto final sea funcional y ecológico.</p>
+
+            <h3>¿Para qué se desarrolló?</h3>
+            <p>El principal objetivo es encontrar soluciones prácticas que contribuyan a la reducción del uso de plásticos derivados del petróleo, los cuales son uno de los principales responsables de la contaminación ambiental. Este tipo de proyecto es relevante porque ofrece una alternativa económica y ecológica para reemplazar las bolsas plásticas tradicionales, fomentando así un cambio hacia un futuro más sostenible.</p>
+            
+            <h3>¿Con qué fines se desarrolló?</h3>
+            <p>El propósito de este proyecto es demostrar que es posible fabricar bolsas biodegradables de manera simple y accesible. Además, se busca inspirar tanto a estudiantes como a otros interesados en promover un cambio hacia un futuro más ecológico y consciente del medio ambiente, destacando la importancia de la sostenibilidad y la innovación en la lucha contra la contaminación.</p>
+        </div>
+    </div>
+</div>
+
+<div id="fisicaSection" class="section hidden">
+    <div class="flex-container">
+        <h2>Proyecto de Física</h2>
+        <div class="section-content">
+            <h3>¿De qué trata el proyecto?</h3>
+            <p>Este proyecto demuestra el funcionamiento de la reflexión de ondas sonoras utilizando láser. A través de este experimento, se busca entender cómo las ondas sonoras interactúan con diferentes superficies y cómo se puede medir su comportamiento mediante el uso de tecnología láser.</p>
+            
+            <img src="imagenes/fisica_detalle.jpeg" alt="Imagen del proyecto de física"> <!-- Ruta corregida -->
+            
+            <h3>¿Cómo se desarrolló?</h3>
+            <p>Se utilizó un láser para proyectar ondas sonoras y observar su reflexión en distintas superficies. Se configuraron dos bafles y un láser, midiendo las ondas sonoras y registrando los resultados para analizar cómo se comportan en diferentes condiciones y superficies. Este proceso permitió visualizar la naturaleza de las ondas sonoras de manera práctica.</p>
+
+            <h3>¿Para qué se desarrolló?</h3>
+            <p>El propósito de este proyecto es educar sobre los principios de la física relacionados con las ondas sonoras y su reflexión. Al demostrar estos conceptos de manera tangible, se busca fomentar el interés en la ciencia y la tecnología entre los estudiantes.</p>
+            
+            <h3>¿Con qué fines se desarrolló?</h3>
+            <p>Este proyecto tiene el fin de ofrecer una experiencia educativa que explique los fundamentos de la física en un contexto práctico. Al proporcionar una demostración visual y práctica, se espera que los estudiantes comprendan mejor la importancia de la ciencia en su vida diaria y se inspiren a explorar más sobre el tema.</p>
+        </div>
+    </div>
+</div>
+
+<div id="tecnologiaSection" class="section hidden">
+    <div class="flex-container">
+        <h2>Proyecto de Tecnología</h2>
+        <div class="section-content">
+            <h3>¿De qué trata el proyecto?</h3>
+            <p>Este proyecto se enfoca en la creación de un juego interactivo que combina elementos de tecnología y química, desarrollado en la plataforma Game Maker. El juego tiene como objetivo enseñar a los jugadores sobre la química de manera divertida y envolvente.</p>
+            
+            <img src="imagenes/tecnologia_detalle.jpeg" alt="Imagen del proyecto de tecnología"> <!-- Ruta corregida -->
+            
+            <h3>¿Cómo se desarrolló?</h3>
+            <p>El juego fue diseñado utilizando la plataforma Game Maker, donde se implementaron conceptos de química a través de una narrativa interactiva. Los jugadores pueden explorar diferentes elementos químicos y sus reacciones a medida que avanzan en el juego, enfrentándose a desafíos que requieren aplicar el conocimiento adquirido para avanzar.</p>
+
+            <h3>¿Para qué se desarrolló?</h3>
+            <p>El principal objetivo es proporcionar una manera innovadora de aprender sobre química, aprovechando el potencial de los videojuegos para educar y entretener. Este enfoque busca involucrar a los estudiantes de una manera que fomente la curiosidad y el aprendizaje activo.</p>
+            
+            <h3>¿Con qué fines se desarrolló?</h3>
+            <p>El propósito de este proyecto es motivar a los estudiantes a aprender sobre química de una manera divertida y atractiva, alentando a que exploren más sobre el tema. A través de la interacción y el juego, se busca generar un mayor interés en la ciencia y su aplicación en el mundo real.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Día de la Ciencia - Grado 1004</p>
+</footer>
+
+</body>
+</html>
+
+
